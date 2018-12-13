@@ -18,11 +18,12 @@ public class OyuncuKontrolu : MonoBehaviour {
 	public float atesGecenZamani;
 	public GameObject Kursun;
 	public Transform KursunNeredenCiksin;
+	AudioSource audio;
 
 	void Start () {
 
 		fizik = GetComponent<Rigidbody> ();
-
+		audio = GetComponent<AudioSource> ();
        
 		
 	}
@@ -32,8 +33,9 @@ public class OyuncuKontrolu : MonoBehaviour {
 		if(Input.GetButton("Fire1")&& Time.time>atesZamani)
 		{
 			atesZamani = Time.time+ atesGecenZamani;
-			Debug.Log("AtesEdildi");
+			
 			Instantiate(Kursun, KursunNeredenCiksin.position,Quaternion.identity);
+			audio.Play();
 		}
 	}
 
