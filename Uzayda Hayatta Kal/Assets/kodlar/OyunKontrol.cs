@@ -41,6 +41,8 @@ public class OyunKontrol : MonoBehaviour {
 		score+=gelenScore;
 		text.text = "score: "+score;
 		
+		//text.text = "score: "+score;
+		
 
 	}
 }
